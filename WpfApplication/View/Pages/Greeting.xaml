@@ -1,0 +1,229 @@
+﻿<Page x:Class="WpfApplication.View.Pages.Greeting"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApplication.View.Pages"
+      mc:Ignorable="d"
+      d:DesignHeight="576"
+      d:DesignWidth="1024"
+      Title="Greeting">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="43*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <SolidColorBrush Color="#f87b20" Opacity="0.25"/>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Grid.RowSpan="2"
+                    Margin="30,0,0,0">
+
+            <StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            Margin="0,0,0,0">
+                    <Grid Height="256">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Width="256" Height="256"
+                               Source="/View/Images/hat.png"
+                               Stretch="Fill"
+                               RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <Image Width="256" Height="256"
+                               Source="{Binding ImageClock}"
+                               Stretch="Fill"
+                               RenderOptions.BitmapScalingMode="HighQuality"
+                               Opacity="{Binding ClockOpacity}"/>
+                        
+                        <StackPanel Grid.Column="1"
+                                    VerticalAlignment="Center"
+                                    Margin="0,0,-20,0">
+                            <TextBlock Text="Clockwork"
+                                       Foreground="DarkOrange"
+                                       FontSize="60"
+                                       FontWeight="Normal"
+                                       VerticalAlignment="Center"
+                                       FontFamily="/View/Fonts/#Timepiece"/>
+                            <TextBlock Text="pari game"
+                                       Foreground="Black"
+                                       FontSize="35"
+                                       FontWeight="Normal"
+                                       VerticalAlignment="Center"
+                                       TextAlignment="Center"
+                                       Margin="0,-30,0,0"
+                                       FontFamily="/View/Fonts/#Timepiece"/>
+
+                            <TextBlock Text="Use"
+                                       Foreground="White"
+                                       FontSize="30"
+                                       FontWeight="Medium"
+                                       FontFamily="/View/Fonts/#Dosis"
+                                       Padding="0"/>
+                            <TextBlock Text="Like"
+                                       Foreground="White"
+                                       FontSize="30"
+                                       FontWeight="Medium"
+                                       FontFamily="/View/Fonts/#Dosis"
+                                       Padding="15,0,0,0"/>
+                            <TextBlock Text="Inspiration"
+                                       Foreground="White"
+                                       FontSize="30"
+                                       FontWeight="Medium"
+                                       FontFamily="/View/Fonts/#Dosis"
+                                       Padding="30,0,0,0"/>
+                        </StackPanel>
+
+                    </Grid>
+                </StackPanel>
+
+                <TextBlock Text="But, suddenly, I viddied that thinking was for the gloopy ones and that the oomny ones use like inspiration and what Bog sends, for now it was lovely music that came to my aid and I viddied at once what to do. "
+                           Foreground="Black"
+                           FontSize="16"
+                           FontWeight="Medium"
+                           FontFamily="/View/Fonts/#Dosis"
+                           TextWrapping="Wrap"
+                           Margin="0,-10,-60,0"
+                           Padding="15,0,0,0"
+                           >
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="1.5" BlurRadius="2" Color="White" />
+                    </TextBlock.Effect>
+                </TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="0,15,0,0"
+                        HorizontalAlignment="Center">
+
+                <Button Content="Bet"
+                        Foreground="White"
+                        FontSize="18"
+                        FontWeight="Medium"
+                        Margin="0,0,10,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="TextElement.FontFamily" Value="/View/Fonts/#Dosis"/>
+                            <Setter Property="Background" Value="#7FFF5100"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#CCFF5100"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="140" Height="35"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button Content="Games"
+                        Foreground="White"
+                        FontSize="18"
+                        FontWeight="Medium">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="TextElement.FontFamily" Value="/View/Fonts/#Dosis"/>
+                            <Setter Property="Background" Value="#7FFF8C00"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#CCFF8C00"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="140" Height="35"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+
+        </StackPanel>
+
+        <Grid Grid.Column="1"
+              Margin="50, -365, -510, 85" 
+              Grid.RowSpan="2">
+
+            <Grid.RenderTransform>
+                <RotateTransform Angle="45"/>
+            </Grid.RenderTransform>
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="{Binding Position}"
+                        Opacity="{Binding LinesOpacity}">
+
+                <StackPanel>
+                    <Border Width="700"
+                        Height="35"
+                        Background="Beige"
+                        Margin="150,0,0,0"
+                            CornerRadius="20"/>
+
+                    <Border Width="700"
+                        Height="35"
+                        Background="White"
+                        Margin="0,15,0,0"
+                            CornerRadius="20"/>
+
+                    <Border Width="700"
+                        Height="35"
+                        Background="Blue"
+                        Margin="75,15,0,0"
+                            CornerRadius="20"/>
+
+                </StackPanel>
+
+                <StackPanel>
+                    <Border Width="700"
+                        Height="35"
+                        Background="Beige"
+                        Margin="150,0,0,0"
+                            CornerRadius="20"/>
+
+                    <Border Width="700"
+                        Height="35"
+                        Background="White"
+                        Margin="0,15,0,0"
+                            CornerRadius="20"/>
+
+                    <Border Width="700"
+                            Height="35"
+                            Background="Blue"
+                            Margin="75,15,0,0"
+                            CornerRadius="20"/>
+
+                </StackPanel>
+
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Page>

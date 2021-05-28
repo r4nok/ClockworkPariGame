@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{372B4B44-BF47-4CCD-82D8-22BC10AD8120}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WpfApplication</RootNamespace>
+    <AssemblyName>WpfApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.2\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Connected Services\ServiceChat\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\EditType.cs" />
+    <Compile Include="ViewModels\PagesVM\BetManagerPageVM.cs" />
+    <Compile Include="ViewModels\PagesVM\GreetingPageVM.cs" />
+    <Compile Include="ViewModels\PagesVM\MessengerPageVM.cs" />
+    <Compile Include="ViewModels\PagesVM\TournamentsPageVM.cs" />
+    <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\ViewModelTypes\EditTextBox.cs" />
+    <Compile Include="ViewModels\ViewModelTypes\MatchEventItem.cs" />
+    <Compile Include="ViewModels\ViewModelTypes\MatchItem.cs" />
+    <Compile Include="ViewModels\ViewModelTypes\TeamTeam.cs" />
+    <Compile Include="ViewModels\ViewModelTypes\TournamentTeam.cs" />
+    <Compile Include="ViewModels\WindowsVM\AddAndEditTeamWindowVM.cs" />
+    <Compile Include="ViewModels\WindowsVM\MainWindowVM.cs" />
+    <Compile Include="View\Converters\Converter_MultipleCommandParameters.cs" />
+    <Compile Include="View\Converters\EnumHelper.cs" />
+    <Compile Include="View\Pages\BetManager.xaml.cs">
+      <DependentUpon>BetManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Greeting.xaml.cs">
+      <DependentUpon>Greeting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Messenger.xaml.cs">
+      <DependentUpon>Messenger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Tournaments.xaml.cs">
+      <DependentUpon>Tournaments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\AddAndEditTeam.xaml.cs">
+      <DependentUpon>AddAndEditTeam.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\Pages\BetManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Greeting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Messenger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Tournaments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Themes\BlackButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Themes\ComoBoxTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Themes\CreatingBetTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Themes\ImageButtonUnSelectedTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Themes\MainButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Themes\MatchButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Themes\MenuButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Themes\ScrollTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Themes\TextBoxEditTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Themes\TextBoxFindTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Themes\UnCoverButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\AddAndEditTeam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Connected Services\ServiceChat\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceChat\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceChat\ServiceMessenger.wsdl" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="View\Fonts\Timepiece.ttf" />
+    <Resource Include="View\Fonts\Timepiece3dBackfill.ttf" />
+    <Resource Include="View\Fonts\Dosis.ttf" />
+    <Resource Include="View\Images\ClockFrames\ClockFrame1.png" />
+    <Resource Include="View\Images\ClockFrames\ClockFrame10.png" />
+    <Resource Include="View\Images\ClockFrames\ClockFrame11.png" />
+    <Resource Include="View\Images\ClockFrames\ClockFrame12.png" />
+    <Resource Include="View\Images\ClockFrames\ClockFrame13.png" />
+    <Resource Include="View\Images\ClockFrames\ClockFrame2.png" />
+    <Resource Include="View\Images\ClockFrames\ClockFrame3.png" />
+    <Resource Include="View\Images\ClockFrames\ClockFrame4.png" />
+    <Resource Include="View\Images\ClockFrames\ClockFrame6.png" />
+    <Resource Include="View\Images\ClockFrames\ClockFrame7.png" />
+    <Resource Include="View\Images\ClockFrames\ClockFrame8.png" />
+    <Resource Include="View\Images\ClockFrames\ClockFrame9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\ClockworkLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\Hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\ClockFrames\ClockFrame5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\menu_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\ChatPicture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\email_send_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLevel\DataLevel.csproj">
+      <Project>{a6536225-f17b-4040-b8cf-f96b39568e0f}</Project>
+      <Name>DataLevel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{d1c9aad9-5043-46bf-8233-b38035185331}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceChat\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceChat\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceChat\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceChat\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceChat\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\manager_40px.png" />
+    <Resource Include="View\Images\stadium_48px.png" />
+    <Resource Include="View\Images\team_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\close_window_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\team_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\pull_down_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\scroll_down_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\scroll_up_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\checked_checkbox_64px.png" />
+    <Resource Include="View\Images\unchecked_checkbox_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\soccer_ball_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\abacus_24px.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

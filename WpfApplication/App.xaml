@@ -1,0 +1,24 @@
+﻿<Application x:Class="WpfApplication.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfApplication"
+             StartupUri="MainWindow.xaml"
+             ShutdownMode="OnLastWindowClose">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/View/Themes/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/ScrollTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/ImageButtonUnSelectedTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/TextBoxFindTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/TextBoxEditTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/MainButtonTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/BlackButtonTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/MatchButtonTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/UnCoverButtonTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/ComoBoxTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/CreatingBetTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
